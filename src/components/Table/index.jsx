@@ -6,7 +6,6 @@ import { Table, Dimmer, Loader, TextArea, Segment } from "semantic-ui-react";
 const TableComp = ({
   headers,
   rows,
-  inputValue,
   isLoading,
   setSorting,
   sortingArrow,
@@ -35,21 +34,6 @@ const TableComp = ({
         </Table.Header>
         <Table.Body>
           {rows
-            .filter(row => {
-              let isValid = false;
-              if (inputValue === "") return true;
-              headers.forEach(cell => {
-                if (
-                  row[cell]
-                    .toString()
-                    .toLowerCase()
-                    .indexOf(inputValue.toLowerCase()) > -1
-                ) {
-                  isValid = true;
-                }
-              });
-              return isValid;
-            })
             .slice(50 * (currentPage - 1), 50 + 50 * (currentPage - 1))
             .map(row => (
               <Table.Row

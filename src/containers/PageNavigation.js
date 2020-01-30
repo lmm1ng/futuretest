@@ -6,7 +6,7 @@ import { getSortedData } from "../selectors/getSortedData";
 
 export default connect(
   state => ({
-    maxPage: getMaxPageValue(state.dataButtons.data),
+    maxPage: getMaxPageValue(getSortedData(state)),
     rows: getSortedData(state)
   }),
   { setCurrentPage }
