@@ -1,34 +1,99 @@
 import React from "react";
 import "./index.css";
 import PropTypes from "prop-types";
-import { Table, Dimmer, Loader } from "semantic-ui-react";
+import { Table, Dimmer, Loader, TextArea, Segment } from "semantic-ui-react";
 
-const TableComp = ({ headers, rows, isLoading, setSorting, sortingArrow }) => (
+const TableComp = ({
+  headers,
+  rows,
+  inputValue,
+  isLoading,
+  setSorting,
+  sortingArrow,
+  currentPage,
+  setUserSubInfo,
+  userSubInfo
+}) => (
   <div id="table_block">
-    <Dimmer active={isLoading} inverted>
+    <Dimmer page active={isLoading} inverted>
       <Loader />
     </Dimmer>
-    {Boolean(rows.length) && (
-      <Table celled fixed>
+    {(Boolean(rows.length) && (
+      <Table selectable celled fixed compact={false}>
         <Table.Header>
           <Table.Row>
             {headers.map(header => (
-              <Table.HeaderCell id={header} onClick={setSorting}>
+              <Table.HeaderCell
+                key={`header-${header}`}
+                id={header}
+                onClick={setSorting}
+              >
                 {`${header} ${sortingArrow(header) || ""} `}
               </Table.HeaderCell>
             ))}
           </Table.Row>
         </Table.Header>
         <Table.Body>
-          {rows.map(row => (
-            <Table.Row>
-              {headers.map(cell => (
-                <Table.Cell id={`cell-${cell}`}>{row[cell]}</Table.Cell>
-              ))}
-            </Table.Row>
-          ))}
+          {rows
+            .filter(row => {
+              let isValid = false;
+              if (inputValue === "") return true;
+              headers.forEach(cell => {
+                if (
+                  row[cell]
+                    .toString()
+                    .toLowerCase()
+                    .indexOf(inputValue.toLowerCase()) > -1
+                ) {
+                  isValid = true;
+                }
+              });
+              return isValid;
+            })
+            .slice(50 * (currentPage - 1), 50 + 50 * (currentPage - 1))
+            .map(row => (
+              <Table.Row
+                key={`row${row.id}-${row.firstName}`}
+                onClick={() =>
+                  setUserSubInfo({
+                    ...row.address,
+                    description: row.description,
+                    firstName: row.firstName,
+                    lastName: row.lastName
+                  })
+                }
+              >
+                {headers.map(cell => (
+                  <Table.Cell key={`cell-${cell}`}>{row[cell]}</Table.Cell>
+                ))}
+              </Table.Row>
+            ))}
         </Table.Body>
       </Table>
+    )) || <span>Выберете объём данных</span>}
+    {Object.keys(userSubInfo).length !== 0 && (
+      <Segment id="userSub_block">
+        <header>
+          <span>Выбран пользователь: </span>
+          <b>{`${userSubInfo.firstName} ${userSubInfo.lastName}`}</b>
+        </header>
+        <section id="userSub_block_description">
+          <span>Описание: </span>
+          <TextArea value={userSubInfo.description || "Нет данных"} />
+          <span>
+            Адрес проживания: <b>{userSubInfo.streetAddress || "Нет данных"}</b>
+          </span>
+          <span>
+            Город: <b>{userSubInfo.city || "Нет данных"}</b>
+          </span>
+          <span>
+            Провинция: <b>{userSubInfo.state || "Нет данных"}</b>
+          </span>
+          <span>
+            Индекс: <b>{userSubInfo.zip || "Нет данных"}</b>
+          </span>
+        </section>
+      </Segment>
     )}
   </div>
 );
@@ -36,7 +101,11 @@ const TableComp = ({ headers, rows, isLoading, setSorting, sortingArrow }) => (
 TableComp.propTypes = {
   headers: PropTypes.arrayOf(PropTypes.string).isRequired,
   rows: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.any)).isRequired,
-  isLoading: PropTypes.bool.isRequired
+  isLoading: PropTypes.bool.isRequired,
+  setSorting: PropTypes.func.isRequired,
+  sortingArrow: PropTypes.func.isRequired,
+  currentPage: PropTypes.number.isRequired,
+  setUserSubInfo: PropTypes.func.isRequired
 };
 
 export default TableComp;

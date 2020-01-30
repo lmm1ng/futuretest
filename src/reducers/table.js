@@ -1,7 +1,8 @@
 const initialState = {
   sortingColumn: "id",
   order: "asc",
-  isLoading: false
+  isLoading: false,
+  userSubInfo: {}
 };
 
 export default (state = initialState, action) => {
@@ -20,6 +21,11 @@ export default (state = initialState, action) => {
       return {
         ...state,
         isLoading: action.payload
+      };
+      case "SET_USER_SUB_INFO":
+      return {
+        ...state,
+        userSubInfo: action.payload
       };
     default:
       return state;

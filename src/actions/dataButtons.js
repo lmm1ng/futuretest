@@ -1,14 +1,21 @@
 import axios from "axios";
 import { setLoading } from "../actions/table";
+import { setCurrentPage } from "./pageNavigation";
 
 const setDataToState = array => ({
   type: "SET_DATA",
   payload: array
 });
 
+export const setFormObj = object => ({
+  type: "SET_FORM_OBJ",
+  payload: object
+});
+
 export const setData = e => {
   return dispatch => {
     dispatch(setLoading(true));
+    dispatch(setCurrentPage(1));
     axios
       .get(
         e.target.id === "small_data_button"

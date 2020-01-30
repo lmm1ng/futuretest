@@ -1,0 +1,12 @@
+#table_block {
+  width: 900px;
+  margin: 20px auto;
+}
+#userSub_block {
+  display: flex;
+  flex-direction: column;
+}
+#userSub_block_description {
+  display: flex;
+  flex-direction: column;
+}

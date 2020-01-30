@@ -12,6 +12,11 @@ export const switchOrder = () => ({
   type: "SWITCH_ORDER"
 });
 
+export const setUserSubInfo = object => ({
+  type: "SET_USER_SUB_INFO",
+  payload: object
+});
+
 export const setSorting = e => {
   return dispatch => {
     dispatch(switchOrder());

@@ -1,18 +1,13 @@
 const initialState = {
-  data: []
+  currentPage: 1
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case "SET_DATA":
+    case "SET_CURRENT_PAGE":
       return {
         ...state,
-        data: action.payload
-      };
-    case "SET_FORM_OBJ":
-      return {
-        ...state,
-        data: state.data.concat(action.payload)
+        currentPage: action.payload
       };
     default:
       return state;
