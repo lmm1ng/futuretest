@@ -5,7 +5,7 @@ import { Button } from "semantic-ui-react";
 
 const DataButtonsComp = ({ dataLoader }) => (
   <div id="data_buttons">
-    <Button.Group>
+    <Button.Group color='blue'>
       <Button id="small_data_button" onClick={dataLoader}>
         Small Data
       </Button>

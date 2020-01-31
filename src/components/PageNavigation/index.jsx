@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 import { Pagination } from "semantic-ui-react";
 
-const PageNavigationComp = ({ maxPage, setCurrentPage, rows }) =>
+const PageNavigationComp = ({ rows, maxPage, setCurrentPage }) =>
   Boolean(rows.length) && (
     <div id="pagination_block">
       <Pagination

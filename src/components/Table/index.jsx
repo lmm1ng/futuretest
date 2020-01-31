@@ -54,7 +54,7 @@ const TableComp = ({
             ))}
         </Table.Body>
       </Table>
-    )) || <span>Выберете объём данных</span>}
+    )) || <Segment id='table_alt_block'>Не выбран объём данных или ничего не найдено.</Segment>}
     {Object.keys(userSubInfo).length !== 0 && (
       <Segment id="userSub_block">
         <header>
@@ -89,7 +89,8 @@ TableComp.propTypes = {
   setSorting: PropTypes.func.isRequired,
   sortingArrow: PropTypes.func.isRequired,
   currentPage: PropTypes.number.isRequired,
-  setUserSubInfo: PropTypes.func.isRequired
+  setUserSubInfo: PropTypes.func.isRequired,
+  userSubInfo: PropTypes.objectOf(PropTypes.any).isRequired
 };
 
 export default TableComp;

@@ -10,3 +10,7 @@
   display: flex;
   flex-direction: column;
 }
+#table_alt_block {
+  text-align: center;
+  margin-top: 100px;
+}

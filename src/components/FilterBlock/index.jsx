@@ -11,10 +11,12 @@ const FilterBlockComp = ({
   <div id="filter_block">
     <Input
       value={currentInputValue}
-      placeholder='Введите данные...'
+      placeholder="Введите данные..."
       onChange={(e, data) => setCurrentInputValue(data.value)}
     />
-      <Button onClick={setInputValue}>Найти</Button>
+    <Button color="red" onClick={setInputValue}>
+      Найти
+    </Button>
   </div>
 );
 

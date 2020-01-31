@@ -28,7 +28,15 @@ const AddFormComp = ({
 }) => (
   <Modal
     open={isModal}
-    trigger={<Button onClick={() => setModalState(true)}>Добавить</Button>}
+    trigger={
+      <Button
+        id="modal_trigger_button"
+        color="green"
+        onClick={() => setModalState(true)}
+      >
+        Добавить
+      </Button>
+    }
     onClose={() => {
       closeModal();
       setModalState(false);
@@ -64,7 +72,7 @@ const AddFormComp = ({
             setModalState(false);
           }}
         >
-          Добавить данные
+          Добавить в таблицу
         </Button>
       </Form>
     </Modal.Content>
