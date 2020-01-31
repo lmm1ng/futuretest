@@ -3,18 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="293b3e32-ade8-4cbf-96ac-56616270a651" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AddForm/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AddForm/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AddForm/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AddForm/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DataButtons/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DataButtons/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DataButtons/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DataButtons/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FilterBlock/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FilterBlock/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PageNavigation/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PageNavigation/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Table/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Table/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Table/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Table/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/DataButtons.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/DataButtons.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/pageNavigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/pageNavigation.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -88,7 +77,7 @@
       <workItem from="1580215168538" duration="2867000" />
       <workItem from="1580282170352" duration="30442000" />
       <workItem from="1580371162509" duration="37400000" />
-      <workItem from="1580448663797" duration="2238000" />
+      <workItem from="1580448663797" duration="3623000" />
     </task>
     <servers />
   </component>
